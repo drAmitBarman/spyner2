@@ -54,7 +54,7 @@ export const addPost =async (req,res) =>{
 }
 
 // get posts
-export const getFeedPost =async (req,res) =>{
+export const getFeedPosts =async (req,res) =>{
  try {
        const {userId}=req.auth();
        const user =await User.findById(userId)
@@ -63,7 +63,7 @@ export const getFeedPost =async (req,res) =>{
        const userIds= [userId, ...user.connections, ...user.following]
        const posts= await Post.find({user: {$in: userIds}}).populate('user').sort({createdAt : -1});
 
-       res.json({success:true,posts})
+       res.json({success:true, posts})
     
  } catch (error) {
      console.log(error);
