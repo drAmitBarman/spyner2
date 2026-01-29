@@ -36,7 +36,7 @@ const UserProfileInfo = ({user,posts,profileId, setShowEdit }) => {
              </span>
               <span className='flex items-center gap-1.5'>
                 <Calendar className='w-4 h-4'/>
-                    Joined <span className='font-medium'>{moment(user.createdAt).fromNow}</span>
+                    Joined <span className='font-medium'>{moment(user.createdAt).fromNow()}</span>
              </span>
             </div>
             <div className=' flex items-center gap-6 mt-6 border-t border-gray-200 pt-4'>
